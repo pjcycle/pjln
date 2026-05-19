@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy / 隐私政策</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+  }
+
+  /* --- Language toggle --- */
+  .toggle-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2rem;
+    border: 2px solid #111;
+    border-radius: 6px;
+    overflow: hidden;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .toggle-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: #111;
+    transition: background 0.2s, color 0.2s;
+    font-family: inherit;
+  }
+  .toggle-btn.active {
+    background: #111;
+    color: #fff;
+  }
+  .toggle-btn:hover:not(.active) {
+    background: #f0f0f0;
+  }
+  .toggle-btn + .toggle-btn {
+    border-left: 2px solid #111;
+  }
+
+  /* --- Content sections --- */
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #111;
+  }
+  .updated { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
+
+  .claims { list-style: none; padding: 0; }
+  .claims li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  .claims li:last-child { border-bottom: none; }
+  .claims li strong {
+    display: inline;
+    color: #111;
+  }
+
+  .footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.25rem; }
+    h1 { font-size: 1.4rem; }
+    .toggle-btn { padding: 0.45rem 1.2rem; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Toggle -->
+  <div class="toggle-bar">
+    <button class="toggle-btn" data-lang="zh">中文</button>
+    <button class="toggle-btn active" data-lang="en">English</button>
+  </div>
+
+  <!-- Chinese -->
+  <div class="lang-content" id="content-zh">
+    <h1>隐私政策</h1>
+    <p class="updated">更新日期：2026 年 5 月 19 日</p>
+    <ul class="claims">
+      <li><strong>纯本地运行</strong><br>本应用为纯本地桌面工具，无服务器、无网络数据上传行为。</li>
+      <li><strong>本地数据存储</strong><br>仅在设备本地保存软件设置、功能偏好、本地授权记录，无云端同步。</li>
+      <li><strong>语言适配</strong><br>仅读取本地系统语言与地区信息，用于适配展示语言，不会采集、外传任何个人隐私信息。</li>
+      <li><strong>无敏感权限</strong><br>应用不获取通讯录、文件内容、定位、账号等敏感权限。</li>
+      <li><strong>数据清除</strong><br>用户可随时清除本地所有应用数据，卸载即可彻底清空全部记录。</li>
+      <li><strong>合规声明</strong><br>境内使用遵守《个人信息保护法》，无任何数据跨境传输行为。</li>
+    </ul>
+  </div>
+
+  <!-- English -->
+  <div class="lang-content" id="content-en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 19, 2026</p>
+    <ul class="claims">
+      <li><strong>Fully Local Operation</strong><br>This app runs fully locally on Mac devices without any remote server connection.</li>
+      <li><strong>Local Data Storage</strong><br>All settings and license data are stored only on your local device, no cloud upload.</li>
+      <li><strong>Language Adaptation</strong><br>We only read your system language and region for language display adjustment, no personal private data will be collected or shared.</li>
+      <li><strong>No Sensitive Permissions</strong><br>This application will not access your private files, location, contacts and other sensitive information.</li>
+      <li><strong>Full Data Control</strong><br>You have full right to delete all local app data at any time. Uninstall the app will erase all records completely.</li>
+      <li><strong>Compliance</strong><br>This software fully complies with GDPR and relevant regional privacy regulations, no user behavior tracking.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Your Company. All rights reserved.
+  </div>
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.toggle-btn');
+  const contents = document.querySelectorAll('.lang-content');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      btns.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('content-' + lang).classList.add('active');
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    });
+  });
+</script>
+</body>
+</html>
