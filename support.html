@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demoflow · Support</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, sans-serif;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+  }
+  h1 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.25rem; color: #111; }
+  h2 {
+    font-size: 1.2rem; font-weight: 600;
+    margin-top: 2.2rem; margin-bottom: 0.75rem;
+    color: #222; padding-bottom: 0.4rem;
+    border-bottom: 1px solid #eee;
+  }
+  p, li { font-size: 0.96rem; color: #444; margin-bottom: 0.6rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: 0.5rem; }
+  a { color: #2563eb; text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+  .meta { font-size: 0.85rem; color: #888; margin-bottom: 1.5rem; }
+  .contact-card {
+    background: #f7f7f9;
+    border: 1px solid #ececef;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .contact-card p { margin-bottom: 0.35rem; }
+  .contact-card p:last-child { margin-bottom: 0; }
+  .faq-item { margin-bottom: 1.25rem; }
+  .faq-q { font-weight: 600; color: #111; margin-bottom: 0.25rem; }
+  .footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.25rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Demoflow · Support</h1>
+  <p class="meta">App: Demoflow · Platform: macOS</p>
+
+  <p>Thanks for using Demoflow — a lightweight screen recording and demo creation tool built for macOS. This page is the official support channel. If you have any questions, suggestions, or run into an issue, we're happy to help.</p>
+
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p><strong>Email:</strong> <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a></p>
+    <p><strong>Website:</strong> <a href="https://pjlnai.com/demoflow" target="_blank" rel="noopener">https://pjlnai.com/demoflow</a></p>
+    <p><strong>Privacy Policy:</strong> <a href="./pjflow.html">pjflow.html</a></p>
+  </div>
+  <p>For the fastest response, please include your macOS version, Demoflow version, and a short description (with screenshots if possible) when contacting us.</p>
+
+  <h2>System Requirements</h2>
+  <ul>
+    <li>macOS 12.0 (Monterey) or later</li>
+    <li>Apple Silicon or Intel Mac</li>
+    <li>~80 MB disk space</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <p class="faq-q">1. How do I start a screen recording?</p>
+    <p>Open Demoflow, choose a recording mode (Full Screen, Window, or Custom Area), then click the Record button. You can also press the global shortcut to start recording from anywhere.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">2. How do I include microphone and system audio?</p>
+    <p>Go to Settings → Audio. Toggle on Microphone to capture your voice, and System Audio to capture internal app sound. You can adjust input levels in the same panel.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">3. Where are my recordings saved?</p>
+    <p>When you finish a recording, the standard macOS save dialog appears so that <strong>you choose the destination folder</strong> (Desktop, Documents, Movies, iCloud Drive, or any other location). The file is written to the path you select and is fully user-accessible. Demoflow does not write recordings into its own sandboxed container.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">4. What output formats are supported?</p>
+    <p>Demoflow exports to MP4 (H.264) and MOV. You can pick the format and resolution (up to 4K) in the export panel after stopping a recording.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">5. Can I add a webcam overlay (picture-in-picture)?</p>
+    <p>Yes. Enable Camera in the recording toolbar — the webcam preview will appear as a draggable overlay during recording. You can resize and reposition it freely.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">6. Does Demoflow upload any of my recordings?</p>
+    <p>No. Demoflow runs fully locally, has no analytics SDK, no cloud account, and no automatic upload. All recordings and settings stay on your Mac. See the <a href="./pjflow.html">Privacy Policy</a> for details.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">7. The recording is laggy or drops frames. What should I do?</p>
+    <p>Lower the resolution or frame rate in Settings → Video, and close other recording-intensive apps. If the issue persists, email us with your Mac model and macOS version.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">8. How do I delete recordings and clear all app data?</p>
+    <p>Recordings are just regular files in the folders you chose — delete them in Finder. To clear settings, open Demoflow → Settings → Data → "Clear All". Uninstalling the app also removes all locally stored settings.</p>
+  </div>
+
+  <h2>Report an Issue</h2>
+  <p>Please email <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a> with:</p>
+  <ul>
+    <li>macOS version (Apple menu → About This Mac)</li>
+    <li>Demoflow version (Demoflow → About)</li>
+    <li>Steps to reproduce the issue</li>
+    <li>Screenshots or screen recording if applicable</li>
+  </ul>
+  <p>We typically reply within 2 business days.</p>
+
+  <div class="footer">
+    &copy; 2026 Demoflow. All rights reserved.
+  </div>
+</div>
+</body>
+</html>
