@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demoflow · Support</title>
+<title>Demoflow · Support / 支持</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -20,6 +20,30 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 3rem 2.5rem;
+  }
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1.75rem;
+    width: fit-content;
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #f7f7f7;
+    font-size: 0.85rem;
+  }
+  .lang-toggle button {
+    border: 0;
+    background: transparent;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-toggle button.active {
+    background: #111;
+    color: #fff;
   }
   h1 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.25rem; color: #111; }
   h2 {
@@ -45,6 +69,7 @@
   .contact-card p:last-child { margin-bottom: 0; }
   .faq-item { margin-bottom: 1.25rem; }
   .faq-q { font-weight: 600; color: #111; margin-bottom: 0.25rem; }
+  [hidden] { display: none !important; }
   .footer {
     margin-top: 2.5rem;
     padding-top: 1rem;
@@ -61,83 +86,200 @@
 </head>
 <body>
 <div class="container">
-  <h1>Demoflow · Support</h1>
-  <p class="meta">App: Demoflow · Platform: macOS</p>
-
-  <p>Thanks for using Demoflow — a lightweight screen recording and demo creation tool built for macOS. This page is the official support channel. If you have any questions, suggestions, or run into an issue, we're happy to help.</p>
-
-  <h2>Contact Us</h2>
-  <div class="contact-card">
-    <p><strong>Email:</strong> <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a></p>
-    <p><strong>Website:</strong> <a href="https://pjlnai.com/demoflow" target="_blank" rel="noopener">https://pjlnai.com/demoflow</a></p>
-    <p><strong>Privacy Policy:</strong> <a href="./index.html">Privacy Policy / 隐私政策</a></p>
-  </div>
-  <p>For the fastest response, please include your macOS version, Demoflow version, and a short description (with screenshots if possible) when contacting us.</p>
-
-  <h2>System Requirements</h2>
-  <ul>
-    <li>macOS 12.0 (Monterey) or later</li>
-    <li>Apple Silicon or Intel Mac</li>
-    <li>~80 MB disk space</li>
-  </ul>
-
-  <h2>Frequently Asked Questions</h2>
-
-  <div class="faq-item">
-    <p class="faq-q">1. How do I start a screen recording?</p>
-    <p>Open Demoflow, choose a recording mode (Full Screen, Window, or Custom Area), then click the Record button. You can also press the global shortcut to start recording from anywhere.</p>
+  <div class="lang-toggle" role="tablist" aria-label="Language switch">
+    <button type="button" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
+    <button type="button" id="btn-zh" role="tab" aria-selected="false">中</button>
   </div>
 
-  <div class="faq-item">
-    <p class="faq-q">2. How do I include microphone and system audio?</p>
-    <p>Go to Settings → Audio. Toggle on Microphone to capture your voice, and System Audio to capture internal app sound. You can adjust input levels in the same panel.</p>
-  </div>
+  <!-- English -->
+  <section id="lang-en" lang="en">
+    <h1>Demoflow · Support</h1>
+    <p class="meta">App: Demoflow · Platform: macOS</p>
 
-  <div class="faq-item">
-    <p class="faq-q">3. Where are my recordings saved?</p>
-    <p>When you finish a recording, the standard macOS save dialog appears so that <strong>you choose the destination folder</strong> (Desktop, Documents, Movies, iCloud Drive, or any other location). The file is written to the path you select and is fully user-accessible. Demoflow does not write recordings into its own sandboxed container.</p>
-  </div>
+    <p>Thanks for using Demoflow — a lightweight screen recording and demo creation tool built for macOS. This page is the official support channel. If you have any questions, suggestions, or run into an issue, we're happy to help.</p>
 
-  <div class="faq-item">
-    <p class="faq-q">4. What output formats are supported?</p>
-    <p>Demoflow exports to MP4 (H.264) and MOV. You can pick the format and resolution (up to 4K) in the export panel after stopping a recording.</p>
-  </div>
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <p><strong>Email:</strong> <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a></p>
+      <p><strong>Website:</strong> <a href="https://pjlnai.com/demoflow" target="_blank" rel="noopener">https://pjlnai.com/demoflow</a></p>
+      <p><strong>Privacy Policy:</strong> <a href="./index.html">Privacy Policy</a></p>
+      <p><strong>User Agreement:</strong> <a href="./userAgreement.html">User Agreement</a></p>
+    </div>
+    <p>For the fastest response, please include your macOS version, Demoflow version, and a short description (with screenshots if possible) when contacting us.</p>
 
-  <div class="faq-item">
-    <p class="faq-q">5. Can I add a webcam overlay (picture-in-picture)?</p>
-    <p>Yes. Enable Camera in the recording toolbar — the webcam preview will appear as a draggable overlay during recording. You can resize and reposition it freely.</p>
-  </div>
+    <h2>System Requirements</h2>
+    <ul>
+      <li>macOS 12.0 (Monterey) or later</li>
+      <li>Apple Silicon or Intel Mac</li>
+      <li>~80 MB disk space</li>
+    </ul>
 
-  <div class="faq-item">
-    <p class="faq-q">6. Does Demoflow upload any of my recordings?</p>
-    <p>No. Demoflow runs fully locally, has no analytics SDK, no cloud account, and no automatic upload. All recordings and settings stay on your Mac. See the <a href="./index.html">Privacy Policy</a> for details.</p>
-  </div>
+    <h2>Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <p class="faq-q">7. The recording is laggy or drops frames. What should I do?</p>
-    <p>Lower the resolution or frame rate in Settings → Video, and close other recording-intensive apps. If the issue persists, email us with your Mac model and macOS version.</p>
-  </div>
+    <div class="faq-item">
+      <p class="faq-q">1. How do I start a screen recording?</p>
+      <p>Open Demoflow, choose a recording mode (Full Screen, Window, or Custom Area), then click the Record button. You can also press the global shortcut to start recording from anywhere.</p>
+    </div>
 
-  <div class="faq-item">
-    <p class="faq-q">8. How do I delete recordings and clear all app data?</p>
-    <p>Recordings are just regular files in the folders you chose — delete them in Finder. To clear settings, open Demoflow → Settings → Data → "Clear All". Uninstalling the app also removes all locally stored settings.</p>
-  </div>
+    <div class="faq-item">
+      <p class="faq-q">2. How do I include microphone and system audio?</p>
+      <p>Go to Settings → Audio. Toggle on Microphone to capture your voice, and System Audio to capture internal app sound. You can adjust input levels in the same panel.</p>
+    </div>
 
-  <h2>Report an Issue</h2>
-  <p>Please email <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a> with:</p>
-  <ul>
-    <li>macOS version (Apple menu → About This Mac)</li>
-    <li>Demoflow version (Demoflow → About)</li>
-    <li>Steps to reproduce the issue</li>
-    <li>Screenshots or screen recording if applicable</li>
-  </ul>
-  <p>We typically reply within 2 business days.</p>
+    <div class="faq-item">
+      <p class="faq-q">3. Where are my recordings saved?</p>
+      <p>When you finish a recording, the standard macOS save dialog appears so that <strong>you choose the destination folder</strong> (Desktop, Documents, Movies, iCloud Drive, or any other location). The file is written to the path you select and is fully user-accessible. Demoflow does not write recordings into its own sandboxed container.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. What output formats are supported?</p>
+      <p>Demoflow exports to MP4 (H.264) and MOV. You can pick the format and resolution (up to 4K) in the export panel after stopping a recording.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. Can I add a webcam overlay (picture-in-picture)?</p>
+      <p>Yes. Enable Camera in the recording toolbar — the webcam preview will appear as a draggable overlay during recording. You can resize and reposition it freely.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">6. Does Demoflow upload any of my recordings?</p>
+      <p>No. Demoflow runs fully locally, has no analytics SDK, no cloud account, and no automatic upload. All recordings and settings stay on your Mac. See the <a href="./index.html">Privacy Policy</a> for details.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">7. The recording is laggy or drops frames. What should I do?</p>
+      <p>Lower the resolution or frame rate in Settings → Video, and close other recording-intensive apps. If the issue persists, email us with your Mac model and macOS version.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">8. How do I delete recordings and clear all app data?</p>
+      <p>Recordings are just regular files in the folders you chose — delete them in Finder. To clear settings, open Demoflow → Settings → Data → "Clear All". Uninstalling the app also removes all locally stored settings.</p>
+    </div>
+
+    <h2>Report an Issue</h2>
+    <p>Please email <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a> with:</p>
+    <ul>
+      <li>macOS version (Apple menu → About This Mac)</li>
+      <li>Demoflow version (Demoflow → About)</li>
+      <li>Steps to reproduce the issue</li>
+      <li>Screenshots or screen recording if applicable</li>
+    </ul>
+    <p>We typically reply within 2 business days.</p>
+  </section>
+
+  <!-- Chinese -->
+  <section id="lang-zh" lang="zh-CN" hidden>
+    <h1>Demoflow · 支持</h1>
+    <p class="meta">应用：Demoflow · 平台：macOS</p>
+
+    <p>感谢您使用 Demoflow——一款为 macOS 打造的轻量录屏与演示制作工具。本页面是官方支持渠道。如您有任何问题、建议或遇到故障，我们乐意协助。</p>
+
+    <h2>联系我们</h2>
+    <div class="contact-card">
+      <p><strong>邮箱：</strong> <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a></p>
+      <p><strong>网站：</strong> <a href="https://pjlnai.com/demoflow" target="_blank" rel="noopener">https://pjlnai.com/demoflow</a></p>
+      <p><strong>隐私政策：</strong> <a href="./index.html">隐私政策</a></p>
+      <p><strong>使用条款：</strong> <a href="./userAgreement.html">使用条款</a></p>
+    </div>
+    <p>为了尽快得到回复，请联系我们时附上您的 macOS 版本、Demoflow 版本以及简要描述（如有截图更佳）。</p>
+
+    <h2>系统要求</h2>
+    <ul>
+      <li>macOS 12.0 (Monterey) 或更高版本</li>
+      <li>Apple Silicon 或 Intel Mac</li>
+      <li>约 80 MB 磁盘空间</li>
+    </ul>
+
+    <h2>常见问题</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. 如何开始一次录屏？</p>
+      <p>打开 Demoflow，选择录制模式（全屏、窗口或自定义区域），然后点击录制按钮。您也可以通过快捷键从任意位置启动录制。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. 如何同时录制麦克风和系统声音？</p>
+      <p>进入「设置 → 音频」，打开「麦克风」以录制人声，打开「系统声音」以录制应用内部声音。可在同一面板调节输入音量。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. 录制文件保存在哪里？</p>
+      <p>录制结束时，会弹出标准的 macOS 保存对话框，由<strong>您自行选择保存路径</strong>（桌面、文稿、影片、iCloud 云盘或其他位置）。文件会写入您选择的路径，完全可访问。Demoflow 不会将录制写入自身的沙盒目录。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. 支持哪些导出格式？</p>
+      <p>Demoflow 支持导出 MP4 (H.264) 与 MOV。停止录制后，您可在导出面板选择格式与分辨率（最高 4K）。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. 能否添加摄像头画中画？</p>
+      <p>可以。在录制工具栏中开启「摄像头」，预览画面会以悬浮图层形式显示。您可自由调整大小与位置。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">6. Demoflow 会上传我的录制吗？</p>
+      <p>不会。Demoflow 完全本地运行，无分析 SDK、无云账号、无自动上传。所有录制与设置均保留在您的 Mac 上。详情请见 <a href="./index.html">隐私政策</a>。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">7. 录制卡顿或掉帧怎么办？</p>
+      <p>在「设置 → 视频」中降低分辨率或帧率，并关闭其他占用资源的应用。若依然如此，请将 Mac 型号与 macOS 版本发给我们。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">8. 如何删除录制并清除所有应用数据？</p>
+      <p>录制就是您选择的普通文件——直接在 Finder 中删除即可。如需清除设置，请打开 Demoflow → 设置 → 数据 → 「全部清除」。卸载应用同样会移除所有本地设置。</p>
+    </div>
+
+    <h2>反馈问题</h2>
+    <p>请发送邮件至 <a href="mailto:pjln.top@gmail.com">pjln.top@gmail.com</a>，并附上：</p>
+    <ul>
+      <li>macOS 版本（Apple 菜单 → 关于本机）</li>
+      <li>Demoflow 版本（Demoflow → 关于）</li>
+      <li>复现步骤</li>
+      <li>截图或录屏（如有）</li>
+    </ul>
+    <p>我们通常在 2 个工作日内回复。</p>
+  </section>
 
   <div class="footer">
-    &copy; 2026 Demoflow. All rights reserved. &nbsp;·&nbsp;
-    <a href="./index.html">Privacy Policy / 隐私政策</a> &nbsp;·&nbsp;
-    <a href="./userAgreement.html">User Agreement / 使用条款</a>
+    &copy; 2026 Demoflow. <span data-lang="en">All rights reserved.</span><span data-lang="zh" hidden>保留所有权利。</span> &nbsp;·&nbsp;
+    <a href="./index.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh" hidden>隐私政策</span></a> &nbsp;·&nbsp;
+    <a href="./userAgreement.html"><span data-lang="en">User Agreement</span><span data-lang="zh" hidden>使用条款</span></a>
   </div>
 </div>
+
+<script>
+  (function () {
+    var btnEn = document.getElementById('btn-en');
+    var btnZh = document.getElementById('btn-zh');
+    var secEn = document.getElementById('lang-en');
+    var secZh = document.getElementById('lang-zh');
+
+    function setLang(lang) {
+      var isEn = lang === 'en';
+      secEn.hidden = !isEn;
+      secZh.hidden = isEn;
+      btnEn.classList.toggle('active', isEn);
+      btnZh.classList.toggle('active', !isEn);
+      btnEn.setAttribute('aria-selected', isEn);
+      btnZh.setAttribute('aria-selected', !isEn);
+      document.documentElement.setAttribute('lang', isEn ? 'en' : 'zh-CN');
+      var spans = document.querySelectorAll('[data-lang]');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].hidden = (spans[i].getAttribute('data-lang') !== lang);
+      }
+      try { localStorage.setItem('demoflow.support.lang', lang); } catch (e) {}
+    }
+
+    btnEn.addEventListener('click', function () { setLang('en'); });
+    btnZh.addEventListener('click', function () { setLang('zh'); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('demoflow.support.lang'); } catch (e) {}
+    setLang(saved === 'zh' ? 'zh' : 'en');
+  })();
+</script>
 </body>
 </html>

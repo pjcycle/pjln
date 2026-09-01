@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy / 隐私政策</title>
+<title>DemoFlow · Privacy Policy / 隐私政策</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -22,22 +22,45 @@
     padding: 3rem 2.5rem;
   }
 
+  /* --- Header --- */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+  }
+  .brand .app-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 0.01em;
+  }
+  .brand .page-tag {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
   /* --- Language toggle --- */
   .toggle-bar {
     display: flex;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 2rem;
     border: 2px solid #111;
     border-radius: 6px;
     overflow: hidden;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    flex-shrink: 0;
   }
   .toggle-btn {
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 1.1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -94,17 +117,39 @@
   @media (max-width: 600px) {
     .container { padding: 1.5rem 1.25rem; }
     h1 { font-size: 1.4rem; }
-    .toggle-btn { padding: 0.45rem 1.2rem; font-size: 0.85rem; }
+    .toggle-btn { padding: 0.35rem 0.85rem; font-size: 0.8rem; }
+    .page-header { gap: 8px; }
+    .brand .app-name { font-size: 1rem; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Toggle -->
-  <div class="toggle-bar">
-    <button class="toggle-btn active" data-lang="en">English</button>
-    <button class="toggle-btn" data-lang="zh">中文</button>
+  <!-- Header -->
+  <header class="page-header">
+    <div class="brand">
+      <span class="app-name">DemoFlow</span>
+      <span class="page-tag"><span data-lang="en">Privacy Policy</span><span data-lang="zh" hidden>隐私政策</span></span>
+    </div>
+    <div class="toggle-bar" role="tablist" aria-label="Language switch">
+      <button class="toggle-btn active" data-lang="en" aria-selected="true">English</button>
+      <button class="toggle-btn" data-lang="zh" aria-selected="false">中文</button>
+    </div>
+  </header>
+
+  <!-- English (default) -->
+  <div class="lang-content active" id="content-en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 19, 2026</p>
+    <ul class="claims">
+      <li><strong>Fully Local Operation</strong><br>This app runs fully locally on Mac devices without any remote server connection.</li>
+      <li><strong>Local Data Storage</strong><br>All settings and license data are stored only on your local device, no cloud upload.</li>
+      <li><strong>Language Adaptation</strong><br>We only read your system language and region for language display adjustment, no personal private data will be collected or shared.</li>
+      <li><strong>No Sensitive Permissions</strong><br>This application will not access your private files, location, contacts and other sensitive information.</li>
+      <li><strong>Full Data Control</strong><br>You have full right to delete all local app data at any time. Uninstall the app will erase all records completely.</li>
+      <li><strong>Compliance</strong><br>This software fully complies with GDPR and relevant regional privacy regulations, no user behavior tracking.</li>
+    </ul>
   </div>
 
   <!-- Chinese -->
@@ -121,24 +166,10 @@
     </ul>
   </div>
 
-  <!-- English -->
-  <div class="lang-content active" id="content-en">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 19, 2026</p>
-    <ul class="claims">
-      <li><strong>Fully Local Operation</strong><br>This app runs fully locally on Mac devices without any remote server connection.</li>
-      <li><strong>Local Data Storage</strong><br>All settings and license data are stored only on your local device, no cloud upload.</li>
-      <li><strong>Language Adaptation</strong><br>We only read your system language and region for language display adjustment, no personal private data will be collected or shared.</li>
-      <li><strong>No Sensitive Permissions</strong><br>This application will not access your private files, location, contacts and other sensitive information.</li>
-      <li><strong>Full Data Control</strong><br>You have full right to delete all local app data at any time. Uninstall the app will erase all records completely.</li>
-      <li><strong>Compliance</strong><br>This software fully complies with GDPR and relevant regional privacy regulations, no user behavior tracking.</li>
-    </ul>
-  </div>
-
   <div class="footer">
-    &copy; 2026 Your Company. All rights reserved. &nbsp;·&nbsp;
-    <a href="./userAgreement.html">User Agreement / 使用条款</a> &nbsp;·&nbsp;
-    <a href="./support.html">Support</a>
+    &copy; 2026 DemoFlow. <span data-lang="en">All rights reserved.</span><span data-lang="zh" hidden>保留所有权利。</span> &nbsp;·&nbsp;
+    <a href="./userAgreement.html"><span data-lang="en">User Agreement</span><span data-lang="zh" hidden>使用条款</span></a> &nbsp;·&nbsp;
+    <a href="./support.html"><span data-lang="en">Support</span><span data-lang="zh" hidden>支持</span></a>
   </div>
 </div>
 
@@ -146,16 +177,31 @@
   const btns = document.querySelectorAll('.toggle-btn');
   const contents = document.querySelectorAll('.lang-content');
 
+  function syncDataLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(s => {
+      // Buttons use data-lang for click target, skip them
+      if (s.classList.contains('toggle-btn')) return;
+      s.hidden = (s.dataset.lang !== lang);
+    });
+  }
+
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
-      btns.forEach(b => b.classList.remove('active'));
+      btns.forEach(b => {
+        const isActive = b === btn;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
       contents.forEach(c => c.classList.remove('active'));
-      btn.classList.add('active');
       document.getElementById('content-' + lang).classList.add('active');
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      syncDataLang(lang);
     });
   });
+  // Initial sync on load
+  const initial = document.querySelector('.lang-content.active');
+  if (initial) syncDataLang(initial.id.replace('content-', ''));
 </script>
 </body>
 </html>

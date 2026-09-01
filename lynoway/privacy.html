@@ -190,7 +190,9 @@
   </section>
 
   <div class="footer">
-    &copy; 2026 Lynoway. All rights reserved.
+    &copy; 2026 Lynoway. <span data-lang="en">All rights reserved.</span><span data-lang="zh" hidden>保留所有权利。</span> &nbsp;·&nbsp;
+    <a href="./userAgreement.html"><span data-lang="en">User Agreement</span><span data-lang="zh" hidden>使用条款</span></a> &nbsp;·&nbsp;
+    <a href="./support.html"><span data-lang="en">Support</span><span data-lang="zh" hidden>支持</span></a>
   </div>
 </div>
 
@@ -210,6 +212,10 @@
       btnEn.setAttribute('aria-selected', isEn);
       btnZh.setAttribute('aria-selected', !isEn);
       document.documentElement.setAttribute('lang', isEn ? 'en' : 'zh-CN');
+      var spans = document.querySelectorAll('[data-lang]');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].hidden = (spans[i].getAttribute('data-lang') !== lang);
+      }
       try { localStorage.setItem('lynoway.privacy.lang', lang); } catch (e) {}
     }
 

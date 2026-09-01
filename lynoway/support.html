@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynoway · Support / 支持</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+  }
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1.75rem;
+    width: fit-content;
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #f7f7f7;
+    font-size: 0.85rem;
+  }
+  .lang-toggle button {
+    border: 0;
+    background: transparent;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-toggle button.active {
+    background: #111;
+    color: #fff;
+  }
+  h1 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.25rem; color: #111; }
+  h2 {
+    font-size: 1.2rem; font-weight: 600;
+    margin-top: 2.2rem; margin-bottom: 0.75rem;
+    color: #222; padding-bottom: 0.4rem;
+    border-bottom: 1px solid #eee;
+  }
+  p, li { font-size: 0.96rem; color: #444; margin-bottom: 0.6rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: 0.5rem; }
+  a { color: #2563eb; text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+  .meta { font-size: 0.85rem; color: #888; margin-bottom: 1.5rem; }
+  .contact-card {
+    background: #f7f7f9;
+    border: 1px solid #ececef;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .contact-card p { margin-bottom: 0.35rem; }
+  .contact-card p:last-child { margin-bottom: 0; }
+  .faq-item { margin-bottom: 1.25rem; }
+  .faq-q { font-weight: 600; color: #111; margin-bottom: 0.25rem; }
+  [hidden] { display: none !important; }
+  .footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.25rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang-toggle" role="tablist" aria-label="Language switch">
+    <button type="button" id="btn-en" class="active" role="tab" aria-selected="true">EN</button>
+    <button type="button" id="btn-zh" role="tab" aria-selected="false">中</button>
+  </div>
+
+  <!-- English -->
+  <section id="lang-en" lang="en">
+    <h1>Lynoway · Support</h1>
+    <p class="meta">App: Lynoway · Platform: iOS 16+</p>
+
+    <p>Thanks for using Lynoway — a lightweight focus and Pomodoro timer built for iOS. This page is the official support channel. If you have any questions, suggestions, or run into an issue, we're happy to help.</p>
+
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <p><strong>Email:</strong> <a href="mailto:pl389818@gmail.com">pl389818@gmail.com</a></p>
+      <p><strong>Website:</strong> <a href="https://pjlnai.com/lynoway" target="_blank" rel="noopener">https://pjlnai.com/lynoway</a></p>
+      <p><strong>Privacy Policy:</strong> <a href="./privacy.html">Privacy Policy</a></p>
+      <p><strong>User Agreement:</strong> <a href="./userAgreement.html">User Agreement</a></p>
+    </div>
+    <p>For the fastest response, please include your iOS version, Lynoway version, and a short description (with screenshots if possible) when contacting us.</p>
+
+    <h2>System Requirements</h2>
+    <ul>
+      <li>iOS 16.0 or later</li>
+      <li>iPhone or iPad</li>
+      <li>~20 MB of storage</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. How do I start a focus session?</p>
+      <p>Open Lynoway, choose a duration (e.g., 25 minutes), then tap the start button. You can also start a Pomodoro round directly from the Home screen.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. Where is my focus data stored?</p>
+      <p>All focus sessions and tags are saved locally on your device only. Lynoway does not upload any data to a remote server. See the <a href="./privacy.html">Privacy Policy</a> for details.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. How do I import custom background music or images?</p>
+      <p>Go to Settings → Theme → Custom, then pick a file from your local library. Lynoway only reads the file you select; nothing is uploaded or shared.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. Does Lynoway have a subscription?</p>
+      <p>Yes. An optional subscription unlocks extended statistics, additional themes, and premium soundscapes. A free trial may be offered to new subscribers; you can cancel anytime in your Apple ID Subscriptions settings. See the <a href="./userAgreement.html">User Agreement</a> for full details.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. How do I delete all my local data?</p>
+      <p>Open Settings → Data → "Clear All" to wipe local focus records and settings. Uninstalling the App also removes all locally stored data.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">6. Notifications aren't firing at the end of a session.</p>
+      <p>Check iOS Settings → Notifications → Lynoway, and make sure notifications are allowed. Also confirm Focus / Do Not Disturb modes are not suppressing alerts.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">7. Can I use Lynoway offline?</p>
+      <p>Yes. Lynoway runs entirely on-device and does not require an internet connection for core timer and recording features.</p>
+    </div>
+
+    <h2>Report an Issue</h2>
+    <p>Please email <a href="mailto:pl389818@gmail.com">pl389818@gmail.com</a> with:</p>
+    <ul>
+      <li>iOS version (Settings → General → About)</li>
+      <li>Lynoway version (Settings → About)</li>
+      <li>Steps to reproduce the issue</li>
+      <li>Screenshots or screen recording if applicable</li>
+    </ul>
+    <p>We typically reply within 2 business days.</p>
+  </section>
+
+  <!-- Chinese -->
+  <section id="lang-zh" lang="zh-CN" hidden>
+    <h1>Lynoway · 支持</h1>
+    <p class="meta">应用：Lynoway · 平台：iOS 16+</p>
+
+    <p>感谢您使用 Lynoway——一款为 iOS 打造的轻量专注与番茄钟计时工具。本页面是官方支持渠道。如您有任何问题、建议或遇到故障，我们乐意协助。</p>
+
+    <h2>联系我们</h2>
+    <div class="contact-card">
+      <p><strong>邮箱：</strong> <a href="mailto:pl389818@gmail.com">pl389818@gmail.com</a></p>
+      <p><strong>网站：</strong> <a href="https://pjlnai.com/lynoway" target="_blank" rel="noopener">https://pjlnai.com/lynoway</a></p>
+      <p><strong>隐私政策：</strong> <a href="./privacy.html">隐私政策</a></p>
+      <p><strong>使用条款：</strong> <a href="./userAgreement.html">使用条款</a></p>
+    </div>
+    <p>为了尽快得到回复，请联系我们时附上您的 iOS 版本、Lynoway 版本以及简要描述（如有截图更佳）。</p>
+
+    <h2>系统要求</h2>
+    <ul>
+      <li>iOS 16.0 或更高版本</li>
+      <li>iPhone 或 iPad</li>
+      <li>约 20 MB 存储空间</li>
+    </ul>
+
+    <h2>常见问题</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. 如何开始一次专注？</p>
+      <p>打开 Lynoway，选择一个时长（如 25 分钟），然后点击开始按钮。您也可以在首页直接启动一轮番茄钟。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. 我的专注数据存储在哪里？</p>
+      <p>所有专注记录与标签仅保存在您的设备本地，Lynoway 不会上传任何数据到远程服务器。详情请见 <a href="./privacy.html">隐私政策</a>。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. 如何导入自定义背景音乐或图片？</p>
+      <p>进入「设置 → 主题 → 自定义」，从本地媒体库中选择文件即可。Lynoway 仅读取您选择的文件，不会上传或分享。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. Lynoway 是否包含订阅？</p>
+      <p>是的。可选订阅可解锁扩展统计、更多主题与高级背景音。新订阅用户可能享受免费试用，您可随时在 Apple ID「订阅」设置中取消。详情请见 <a href="./userAgreement.html">使用条款</a>。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. 如何删除所有本地数据？</p>
+      <p>进入「设置 → 数据 → 全部清除」即可清空本地专注记录与设置。卸载本应用同样会移除所有本地数据。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">6. 专注结束的通知没有弹出？</p>
+      <p>请检查 iOS「设置 → 通知 → Lynoway」，确认已允许通知；同时确认「专注模式 / 勿扰模式」没有屏蔽提醒。</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">7. 能否离线使用 Lynoway？</p>
+      <p>可以。Lynoway 完全在设备本地运行，核心计时与记录功能无需网络连接。</p>
+    </div>
+
+    <h2>反馈问题</h2>
+    <p>请发送邮件至 <a href="mailto:pl389818@gmail.com">pl389818@gmail.com</a>，并附上：</p>
+    <ul>
+      <li>iOS 版本（「设置 → 通用 → 关于」）</li>
+      <li>Lynoway 版本（「设置 → 关于」）</li>
+      <li>复现步骤</li>
+      <li>截图或录屏（如有）</li>
+    </ul>
+    <p>我们通常在 2 个工作日内回复。</p>
+  </section>
+
+  <div class="footer">
+    &copy; 2026 Lynoway. <span data-lang="en">All rights reserved.</span><span data-lang="zh" hidden>保留所有权利。</span> &nbsp;·&nbsp;
+    <a href="./privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh" hidden>隐私政策</span></a> &nbsp;·&nbsp;
+    <a href="./userAgreement.html"><span data-lang="en">User Agreement</span><span data-lang="zh" hidden>使用条款</span></a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var btnEn = document.getElementById('btn-en');
+    var btnZh = document.getElementById('btn-zh');
+    var secEn = document.getElementById('lang-en');
+    var secZh = document.getElementById('lang-zh');
+
+    function setLang(lang) {
+      var isEn = lang === 'en';
+      secEn.hidden = !isEn;
+      secZh.hidden = isEn;
+      btnEn.classList.toggle('active', isEn);
+      btnZh.classList.toggle('active', !isEn);
+      btnEn.setAttribute('aria-selected', isEn);
+      btnZh.setAttribute('aria-selected', !isEn);
+      document.documentElement.setAttribute('lang', isEn ? 'en' : 'zh-CN');
+      var spans = document.querySelectorAll('[data-lang]');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].hidden = (spans[i].getAttribute('data-lang') !== lang);
+      }
+      try { localStorage.setItem('lynoway.support.lang', lang); } catch (e) {}
+    }
+
+    btnEn.addEventListener('click', function () { setLang('en'); });
+    btnZh.addEventListener('click', function () { setLang('zh'); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('lynoway.support.lang'); } catch (e) {}
+    setLang(saved === 'zh' ? 'zh' : 'en');
+  })();
+</script>
+</body>
+</html>
