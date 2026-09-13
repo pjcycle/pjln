@@ -5,7 +5,7 @@
 整改 Apple App Review：
 
 - Guideline 3.1.2(c)：订阅元数据缺少有效 Terms of Use (EULA) 链接及完整订阅说明。
-- Guideline 5.6：7 天体验未在购买流程中明确说明，且网站 EULA 误写成试用结束后自动扣费。
+- Guideline 5.6：应用已下线 7 天促销体验，需同步清理网站 EULA / 隐私政策中所有相关表述。
 
 本文件供另一个 agent 修改网站项目使用。不要修改 DemoFlow 工程代码，不要自动 commit 或 push。
 
@@ -136,26 +136,16 @@ The purchase screen shows the final price, currency, and billing period before y
 - `Pro Yearly`：one-year auto-renewing subscription；一个计费年，按年自动续订。
 - `Pro Lifetime`：one-time purchase，no auto-renewal；一次性买断，非订阅，不自动续订。
 
-### 必须替换第 2.4 节 Free Trials
+### 必须删除第 2.4 节 七天独立促销体验
 
-禁止保留以下含义：
+应用已下线 7 天促销体验，EULA 中不得保留任何关于该体验的描述，包括但不限于：
 
-```text
-试用结束后 Apple ID 自动扣费
-trial converts to a paid subscription
-```
+- "Seven-Day Promotional Experience" / "七天独立促销体验" 整节内容
+- "one-time 7-day experience records" / "一次性 7 天体验记录"
+- "Anonymous Install ID & Trial Time" / "匿名安装标识与试用时间"
+- "Keychain 仍可能保留试用记录" / "Keychain may retain the claim record"
 
-英文替换为：
-
-```text
-DemoFlow may offer one seven-day promotional experience to eligible users. This experience is a separate, locally recorded DemoFlow benefit: it does not create an Apple auto-renewable subscription, does not require a cancellation, and does not charge your Apple ID. After the experience ends, premium access ends unless you separately choose and confirm a paid plan. Eligibility is limited to one claim per installation identity and the claim record may remain in the macOS Keychain after uninstalling the app.
-```
-
-中文替换为：
-
-```text
-DemoFlow 可能向符合条件的用户提供一次 7 天独立促销体验。这项体验是 DemoFlow 本地记录的独立福利：不会创建 Apple 自动续订订阅、无需取消，也不会从您的 Apple ID 扣款。体验结束后，高级功能会结束；只有您另行选择并确认付费方案后，才会开始付费订阅。体验资格按安装身份限制为一次，卸载应用后相关记录仍可能保留在 macOS 钥匙串中。
-```
+第 2.4 节删除后，原 2.5（退款）起的章节号需要依次前移。
 
 ### 保留正式订阅的自动续订说明
 
@@ -228,9 +218,9 @@ Terms of Use (EULA): https://pjcycle.github.io/pjln/userAgreement
 ```text
 The subscription purchase screen now clearly shows each plan title, billing period, localized price, Privacy Policy, and Terms of Use (EULA).
 
-The seven-day experience is a separate local promotional benefit. It does not create an Apple auto-renewable subscription and does not charge the user’s Apple ID. After the experience ends, users must explicitly choose and confirm a paid plan.
+DemoFlow no longer offers any seven-day promotional experience. All references to the previous local promotional benefit have been removed from the website Privacy Policy and Terms of Use (EULA).
 
-Only the Monthly and Yearly plans are Apple auto-renewable subscriptions. A screen recording showing the updated purchase flow is included.
+Only the Monthly and Yearly plans are Apple auto-renewable subscriptions; the Lifetime plan is a one-time purchase. A screen recording showing the updated purchase flow is included.
 ```
 
 ## 六、修改后自检
@@ -238,9 +228,9 @@ Only the Monthly and Yearly plans are Apple auto-renewable subscriptions. A scre
 ```bash
 git -C /Users/jamie/ClaudeAi/pjln diff --check
 git -C /Users/jamie/ClaudeAi/pjln status --short
-rg -n -i "automatically charged|trial converts|自动扣款|转为付费订阅|uninstall.*erase|无敏感权限|无服务器" /Users/jamie/ClaudeAi/pjln/index.html /Users/jamie/ClaudeAi/pjln/userAgreement.html
+rg -n -i "automatically charged|trial converts|自动扣款|转为付费订阅|seven-day|seven day|promotional experience|七天|7 天|试用时间|trial time" /Users/jamie/ClaudeAi/pjln/index.html /Users/jamie/ClaudeAi/pjln/userAgreement.html
 ```
 
-最后一条命令不应再命中旧的试用自动扣费和不准确隐私声明。
+最后一条命令不应再命中任何 7 天促销体验、试用记录或自动扣费相关表述。
 
 不要修改旧的 `privacy-en.html`、`privacy-zh.html`，除非确认它们也会被 App Store 审核链接访问。
